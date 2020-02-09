@@ -10,7 +10,9 @@ export class HeaderComponent implements OnInit {
   sitename = 'Hello World';
   sitelogo = '/assets/images/logo.png';
   sitesubtitle = '記載著 Will 在網路世界的學習心得與技術分享';
-  showIcons = 1;
+
+  showIcons = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,8 +22,11 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  changeTitle(){
-    this.sitename += '！';
+  changeTitle(evt: MouseEvent) {
+    if (evt.ctrlKey) {
+      this.sitename += '！';
+    }
+
   }
 
 }
