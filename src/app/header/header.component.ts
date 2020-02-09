@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   showIcons = false;
 
+  fontSize = 12;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -26,7 +28,17 @@ export class HeaderComponent implements OnInit {
     if (evt.ctrlKey) {
       this.sitename += '！';
     }
-
   }
+
+  changeSize(evt: WheelEvent) {
+    if  (evt.deltaY < 0) {
+      this.fontSize++;
+    } else {
+      this.fontSize--;
+    }
+
+    evt.preventDefault();
+  }
+
 
 }
