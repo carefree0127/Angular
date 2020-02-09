@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
 
   sitename = 'Hello World';
   sitelogo = '/assets/images/logo.png';
+  showIcons = 1;
   constructor() { }
 
   ngOnInit(): void {
